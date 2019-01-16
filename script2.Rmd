@@ -1,0 +1,164 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Using https://github.com/MangoTheCat/radarchart
+
+
+Install radarchart from CRAN
+```{r}
+install.packages("radarchart")
+```
+
+Edit the following script accordingly:
+```{r}
+labs <- c("Climate Change Cryosphere", "Climate Change Atmosphere", "Climate Change Terrestrial Biosphere", "Marine System Change", "Arctic Regional \n Collaboration", "Arctic Regional Security", "Global Policy", "International Security", "Status of Arctic \n Indigenous Peoples", "Access to Markets", "Economic Development: \n Renewable Resource Extraction", "Economic Development: \n Non-Renewable Resource Extraction","Arctic Energy Systems", "Public Health", "Arctic Community \n Sustainability", "Science Advancement \n and Communication")
+
+scores <- list(
+  "Most Consistent" = c(3.045, 3, 2.773, 2.818, 2.682, 1.955, 2.364, 3.136, 2.318, 1.955, 4.364, 4.409, 3.318, 1.864, 2.818, 1.909),
+  "Most Plausible" = c(3.818,3.409,3.364,3.455,3.864,3.182,3.727,3.409,3.455,3.045,4.364,4.409,3.318,1.864,2.818,2.318),
+  "Most Robust" = c(2.091,2.455,2.545,2.455,2.682,1.955,2.364,1.909,2.318,3.045,2.773,4.409,2.136,3.636,2.818,1.909)
+)
+
+#chartJSRadar(scores, labs, width = NULL, height = NULL, main = NULL, maxScale = NULL, scaleStepWidth = NULL, scaleStartValue = 0, responsive = TRUE, labelSize = 18, showLegend = TRUE, addDots = TRUE, colMatrix = NULL, polyAlpha = 0.2, lineAlpha = 0.8, showToolTipLabel = TRUE, ...)
+
+#define color
+c <- grDevices::col2rgb(c("chartreuse3","mediumorchid2", "cornflowerblue"))
+
+#plot
+radarchart::chartJSRadar(scores = scores, labs = labs, width = 600, height = 600, maxScale = 5, labelSize = 10, colMatrix=c)
+
+```
+
+Most Consistent and highly consistent
+```{r}
+labs <- c("A:Gradulal increase in cryosphere loss", 
+          "B: Mid-century decline in greenhouse gas emissions", 
+          "C: Increased biomass, fires, and species changes", 
+          "D: Warm oceans and coastal erosion", 
+          "E: Low arctic collaboration", 
+          "F: Arctic Insecurity", 
+          "G: Breakdown of global policy cooperation", 
+          "H: Hot and insecure everywhere", 
+          "I: Decline of Indigenous status in the Arctic", 
+          "J: Market gloom", 
+          "K: Resources and revenues extracted", 
+          "L: Dill, dig and remove",
+          "M: Unorganized diversity in a boom-bust economy", 
+          "N: Public health crisis", 
+          "O: Pockets of community adaptation", 
+          "P: Corporatocracy declares war on science")
+
+scores <- list(
+  "Most consistent and highly consistent" = c(3.045, 3, 2.773, 2.818, 2.682, 1.955, 2.364, 3.136, 2.318, 1.955, 4.364, 4.409, 3.318, 1.864, 2.818, 1.909))
+
+#chartJSRadar(scores, labs, width = NULL, height = NULL, main = NULL, maxScale = NULL, scaleStepWidth = NULL, scaleStartValue = 0, responsive = TRUE, labelSize = 18, showLegend = TRUE, addDots = TRUE, colMatrix = NULL, polyAlpha = 0.2, lineAlpha = 0.8, showToolTipLabel = TRUE, ...)
+
+#define color
+c <- grDevices::col2rgb(c("yellow"))
+
+#plot
+radarchart::chartJSRadar(scores = scores, labs = labs, width = 600, height = 600, maxScale = 5, labelSize = 10, colMatrix=c)
+
+#save as
+#print( "Users/caps/Google Drive/Shared/Projects/SEARCH/PolarCharts-master/MostConsistentandHighlyConsistent.jpeg")
+
+```
+
+
+Most Plausible
+```{r}
+labs <- c("A: Rapid melt and thaw of the cryosphere", 
+          "B: Late century decline in greenhouse gas emissions", 
+          "C: High temperatures and unstable systems", 
+          "D: Dramatic marine ecosystem shifts", 
+          "E: Business as usual in Arctic regional collaboration", 
+          "F: Business as usual in Arctic regional security", 
+          "G: Status quo global policy", 
+          "H: International security as a luxury", 
+          "I: Little change in the status of arctic Indigenous Peoples", 
+          "J: Continued boom-bust", 
+          "K: Resources and revenues extracted", 
+          "L: Dill, dig and remove",
+          "M: Unorganized diversity in a boom-bust economy", 
+          "N: Public health crisis", 
+          "O: Pockets of community adaptation", 
+          "P: Knowledge co-production")
+
+scores <- list(
+  "Most Plausible" = c(3.818,3.409,3.364,3.455,3.864,3.182,3.727,3.409,3.455,3.045,4.364,4.409,3.318,1.864,2.818,2.318))
+
+#chartJSRadar(scores, labs, width = NULL, height = NULL, main = NULL, maxScale = NULL, scaleStepWidth = NULL, scaleStartValue = 0, responsive = TRUE, labelSize = 18, showLegend = TRUE, addDots = TRUE, colMatrix = NULL, polyAlpha = 0.2, lineAlpha = 0.8, showToolTipLabel = TRUE, ...)
+
+#define color
+c <- grDevices::col2rgb(c("cornflowerblue"))
+
+#plot
+radarchart::chartJSRadar(scores = scores, labs = labs, width = 600, height = 600, maxScale = 5, labelSize = 10, colMatrix=c)
+
+```
+
+Most Robust
+```{r}
+labs <- c("A: The vanishing cryosphere", 
+          "B: Rising greenhouse emissions throughout century", 
+          "C: Green and wet Arctic", 
+          "D: The transformed Arctic marine ecosystem", 
+          "E: Isolation replaces regional collaboration", 
+          "F: Arctic insecurity", 
+          "G: Breakdown of global collaboration on policy", 
+          "H: Arctic security through isolation", 
+          "I: Decline of Indigenous status in the Arctic", 
+          "J: Continued boom-bust", 
+          "K: Arctic Development Bank", 
+          "L: Dill, dig and remove",
+          "M: Our fossil energy future", 
+          "N: Public health for those who can pay", 
+          "O: Pockets of community adaptation", 
+          "P: Corporatocracy declares war on science")
+
+scores <- list(
+  "Most Robust" = c(2.091,2.455,2.545,2.455,2.682,1.955,2.364,1.909,2.318,3.045,2.773,4.409,2.136,3.636,2.818,1.909))
+
+#chartJSRadar(scores, labs, width = NULL, height = NULL, main = NULL, maxScale = NULL, scaleStepWidth = NULL, scaleStartValue = 0, responsive = TRUE, labelSize = 18, showLegend = TRUE, addDots = TRUE, colMatrix = NULL, polyAlpha = 0.2, lineAlpha = 0.8, showToolTipLabel = TRUE, ...)
+
+#define color
+c <- grDevices::col2rgb(c("mediumorchid2"))
+
+#plot
+radarchart::chartJSRadar(scores = scores, labs = labs, width = 600, height = 600, maxScale = 5, labelSize = 10, colMatrix=c)
+
+```
+
+
+Forced FCP 2.6
+```{r}
+labs <- c("A: Slowing the melt and thaw in the Arctic", 
+          "B: Early decline in greenhouse gas emissions", 
+          "C: Terrestrial biosphere stabilization", 
+          "D: Less heat absorbed by oceans", 
+          "E: Harmony in Arctic regional collaboration", 
+          "F: Collaborative international arctic security", 
+          "G: Arctic Council as government", 
+          "H: International Security", 
+          "I: International security harmonization", 
+          "J: Local planning for sustainable markets", 
+          "K: Arctic Development Bank", 
+          "L: Collaboration, moderation and consultation",
+          "M: Energy independence", 
+          "N: Resilient arctic public health", 
+          "O: Arctic adaptation delivers self-reliance", 
+          "P: Knowledge co-production")
+
+scores <- list(
+  "Forced RCP 2.6" = c(1.045, 1.136, 1.318, 1.273, 1.864, 1.091, 1.318, 1.545, 2.636, 2.136, 2.773, 2.773, 2.364, 2.000, 2.227, 2.318))
+
+#chartJSRadar(scores, labs, width = NULL, height = NULL, main = NULL, maxScale = NULL, scaleStepWidth = NULL, scaleStartValue = 0, responsive = TRUE, labelSize = 18, showLegend = TRUE, addDots = TRUE, colMatrix = NULL, polyAlpha = 0.2, lineAlpha = 0.8, showToolTipLabel = TRUE, ...)
+
+#define color
+c <- grDevices::col2rgb(c("chartreuse3"))
+
+#plot
+radarchart::chartJSRadar(scores = scores, labs = labs, width = 600, height = 600, maxScale = 5, labelSize = 10, colMatrix=c)
+```
