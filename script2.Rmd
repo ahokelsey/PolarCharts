@@ -1,6 +1,9 @@
 ---
 title: "R Notebook"
-output: html_notebook
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
 ---
 
 Using https://github.com/MangoTheCat/radarchart
@@ -27,7 +30,7 @@ scores <- list(
 c <- grDevices::col2rgb(c("chartreuse3","mediumorchid2", "cornflowerblue"))
 
 #plot
-radarchart::chartJSRadar(scores = scores, labs = labs, width = 600, height = 600, maxScale = 5, scaleStepWidth = 1, labelSize = 12, colMatrix=c)
+radarchart::chartJSRadar(scores = scores, labs = labs, maxScale = 5, scaleStepWidth = 1, labelSize = 11, colMatrix=c)
 
 ```
 
@@ -59,7 +62,7 @@ scores <- list(
 c <- grDevices::col2rgb(c("yellow"))
 
 #plot
-radarchart::chartJSRadar(scores = scores, labs = labs, width = 600, height = 600, maxScale = 5, scaleStepWidth = 1, labelSize = 12, colMatrix=c)
+radarchart::chartJSRadar(scores = scores, labs = labs, maxScale = 5, scaleStepWidth = 1, labelSize = 11, colMatrix=c)
 
 #save as
 #print( "Users/caps/Google Drive/Shared/Projects/SEARCH/PolarCharts-master/MostConsistentandHighlyConsistent.jpeg")
@@ -93,7 +96,7 @@ scores <- list(
 c <- grDevices::col2rgb(c("cornflowerblue"))
 
 #plot
-radarchart::chartJSRadar(scores = scores, labs = labs, width = 600, height = 600, maxScale = 5, scaleStepWidth = 1, labelSize = 12, colMatrix=c)
+radarchart::chartJSRadar(scores = scores, labs = labs, maxScale = 5, scaleStepWidth = 1, labelSize = 11, colMatrix=c)
 
 ```
 
@@ -123,7 +126,7 @@ scores <- list(
 c <- grDevices::col2rgb(c("mediumorchid2"))
 
 #plot
-radarchart::chartJSRadar(scores = scores, labs = labs, width = 600, height = 600, maxScale = 5, scaleStepWidth = 1, labelSize = 12, colMatrix=c)
+radarchart::chartJSRadar(scores = scores, labs = labs, maxScale = 5, scaleStepWidth = 1, labelSize = 11, colMatrix=c)
 
 ```
 
@@ -155,5 +158,35 @@ scores <- list(
 c <- grDevices::col2rgb(c("chartreuse3"))
 
 #plot
-radarchart::chartJSRadar(scores = scores, labs = labs, width = 600, height = 600, maxScale = 5, scaleStepWidth = 1, labelSize = 12, colMatrix=c)
+radarchart::chartJSRadar(scores = scores, labs = labs, maxScale = 5, scaleStepWidth = 1, labelSize = 11, colMatrix=c)
+```
+
+
+Forced FCP 2.6
+```{r}
+labs <- c("A: Slowing the melt and thaw in the Arctic", 
+          "B: Early decline in greenhouse gas emissions", 
+          "C: Terrestrial biosphere stabilization", 
+          "D: Less heat absorbed by oceans", 
+          "E: Harmony in Arctic regional collaboration", 
+          "F: Collaborative international arctic security", 
+          "G: Arctic Council as government", 
+          "H: International Security", 
+          "I: International security harmonization", 
+          "J: Local planning for sustainable markets", 
+          "K: Arctic Development Bank", 
+          "L: Collaboration, moderation and consultation",
+          "M: Energy independence", 
+          "N: Resilient arctic public health", 
+          "O: Arctic adaptation delivers self-reliance", 
+          "P: Knowledge co-production")
+
+scores <- list(
+  "Forced RCP 2.6" = c(1.045, 1.136, 1.318, 1.273, 1.864, 1.091, 1.318, 1.545, 2.636, 2.136, 2.773, 2.773, 2.364, 2.000, 2.227, 2.318))
+
+#define color
+c <- grDevices::col2rgb(c("coral"))
+
+#plot
+radarchart::chartJSRadar(scores = scores, labs = labs, maxScale = 5, scaleStepWidth = 1, labelSize = 11, colMatrix=c)
 ```
